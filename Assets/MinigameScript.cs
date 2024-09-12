@@ -46,9 +46,6 @@ public class MinigameScript : MonoBehaviour
     }
 
     bool CheckHit(){
-        print(pointer.eulerAngles.z);
-        print(sliderTransform.eulerAngles.z);
-        print(sliderTransform.eulerAngles.z + slider.value * 360);
         if (pointer.eulerAngles.z >= sliderTransform.eulerAngles.z && pointer.eulerAngles.z <= sliderTransform.eulerAngles.z + slider.value * 360){
             return true;
         }

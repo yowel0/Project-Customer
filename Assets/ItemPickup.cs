@@ -39,8 +39,15 @@ public class ItemPickup : MonoBehaviour
     void ItemRaycast(){
         Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 10);
         RaycastHit hit;
-        if(Physics.Raycast(cameraTransform.position, cameraTransform.forward,out hit,1000f,mask)){
+        if(Physics.Raycast(cameraTransform.position, cameraTransform.forward,out hit,1000f)){
             if (hit.collider.gameObject.CompareTag("Item")){
+                OrderScript order = hit.collider.gameObject.GetComponent<OrderScript>();
+                if (order != null){
+                    PlayerPopUp.NewPopUp(order.orderString(),0);
+                }
+                else {
+                    PlayerPopUp.NewPopUp("Pick Up",0);
+                }
                 ItemScript item = hit.collider.gameObject.GetComponent<ItemScript>();
                 if (item != null){
                     item.Select();
@@ -56,6 +63,7 @@ public class ItemPickup : MonoBehaviour
                 }
             }
             if (hit.collider.gameObject.CompareTag("Interactable")){
+                PlayerPopUp.NewPopUp("Press",0);
                 Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
                 if (Input.GetKey(KeyCode.E)){
                     interactable.Interact();

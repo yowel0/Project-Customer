@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     //jumping
     LayerMask mask;
     [Header("Jumping")]
+    public bool canJump;
     public float jumpHeight;
 
 
@@ -57,8 +58,9 @@ public class PlayerMovement : MonoBehaviour
             Look();
         }
 
-        Debug.DrawRay(transform.position - new Vector3(0,transform.localScale.y,0), Vector3.down* .5f);
-        if(Physics.Raycast(transform.position - transform.localScale / 2, Vector3.down, .5f,mask) && Input.GetKeyDown(KeyCode.Space)){
+        if (canJump){
+            Debug.DrawRay(transform.position - new Vector3(0,transform.localScale.y,0), Vector3.down* .5f);
+            if(Physics.Raycast(transform.position - transform.localScale / 2, Vector3.down, .5f,mask) && Input.GetKeyDown(KeyCode.Space)){
             print("grond");
             if (movementType == MovementType.AddForce){
                 //Force method
@@ -69,8 +71,8 @@ public class PlayerMovement : MonoBehaviour
                 //Set velocity method
                 rb.velocity = new Vector3(rb.velocity.x,jumpHeight,rb.velocity.z);
             }
+            }
         }
-
     }
 
     void FixedUpdate()

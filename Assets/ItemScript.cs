@@ -11,7 +11,8 @@ public class ItemScript : Outline
 
     public enum ItemType{
         Casing,
-        Cap
+        Cap,
+        Order
     }
 
     public ItemType itemType;
