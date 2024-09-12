@@ -11,9 +11,7 @@ public class ItemScript : Outline
 
     public enum ItemType{
         Casing,
-        Fillament,
-        Cotton,
-        Battery
+        Cap
     }
 
     public ItemType itemType;
@@ -41,9 +39,11 @@ public class ItemScript : Outline
         }
 
         if (containingObject != null){
-            rb.velocity = Vector3.zero;
+            if (rb != null){
+                rb.velocity = Vector3.zero;
+            }
             transform.rotation = originalRotation;
-        }
+        } 
     }
 
     public void Select(){

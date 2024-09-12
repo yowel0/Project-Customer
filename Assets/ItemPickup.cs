@@ -20,7 +20,10 @@ public class ItemPickup : MonoBehaviour
         ItemRaycast();
         if (itemHeld != null){
             itemHeld.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
-            itemHeld.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Rigidbody rb = itemHeld.GetComponent<Rigidbody>();
+            if (rb != null){
+                rb.velocity = Vector3.zero;
+            }
             if (Input.GetKeyDown(KeyCode.Q)){
                 itemHeld.GetComponent<ItemScript>().Release();
                 itemHeld = null;

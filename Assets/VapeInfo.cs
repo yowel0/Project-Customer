@@ -4,12 +4,14 @@ using UnityEngine;
 public class VapeInfo : MonoBehaviour
 {
     public enum CasingColor{
+        None,
         Blue,
         Green,
         Red
     }
     [Header("Color")]
-    public CasingColor color;
+    public CasingColor caseColor;
+    public CasingColor capColor;
     
     
     [Header("Flavour")]
