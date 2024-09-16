@@ -35,6 +35,6 @@ public class CustomerScript : Interactable
             Destroy(currentOrder);
         }
         order.GetComponent<OrderScript>().customer = customer;
-        currentOrder = Instantiate(order);
+        currentOrder = Instantiate(order, transform.position + Vector3.up * 2, transform.rotation);
     }
 }
