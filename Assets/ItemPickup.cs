@@ -69,6 +69,13 @@ public class ItemPickup : MonoBehaviour
                     interactable.Interact();
                 }
             }
+            if (hit.collider.gameObject.CompareTag("Customer")){
+                PlayerPopUp.NewPopUp("Take Order",0);
+                CustomerScript customer = hit.collider.gameObject.GetComponent<CustomerScript>();
+                if (Input.GetKeyDown(KeyCode.E)){
+                    customer.Interact();
+                }
+            }
         }
     }
 }
