@@ -43,7 +43,7 @@ public class ItemScript : Outline
             if (rb != null){
                 rb.velocity = Vector3.zero;
             }
-            transform.rotation = originalRotation;
+            transform.rotation = containingObject.transform.rotation;
         } 
     }
 

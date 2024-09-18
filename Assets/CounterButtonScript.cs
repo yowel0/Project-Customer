@@ -9,6 +9,6 @@ public class CounterButtonScript : Interactable
     public override void Interact()
     {
         //base.Interact();
-        counterScript.Compare();
+        counterScript.Click();
     }
 }

@@ -7,14 +7,14 @@ public class GameCycleManager : MonoBehaviour
 {
     public GameObject customerPrefab;
 
-    public List<Customer> todaysCustomers = new List<Customer>();
+    public List<Customer> todaysCustomers;
 
-    [SerializeField]
-    List<GameObject> instantiatedCustomers = new List<GameObject>();
+    public List<GameObject> instantiatedCustomers = new List<GameObject>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+
     }
 
     // Update is called once per frame
@@ -23,9 +23,20 @@ public class GameCycleManager : MonoBehaviour
         SetCustomerPositions();
 
         if (Input.GetKeyDown(KeyCode.P)){
+            InstantiateNextCustomer();
+        }
+    }
+
+    public void InstantiateNextCustomer(){
+        if (todaysCustomers.Count > 0){
             InstantiateCustomer(todaysCustomers[0]);
             todaysCustomers.RemoveAt(0);
         }
+    }
+
+    public void RemoveCustomer(CustomerScript customerScript){
+        instantiatedCustomers.Remove(customerScript.gameObject);
+        Destroy(customerScript.gameObject);
     }
 
     void InstantiateCustomer(Customer customer){

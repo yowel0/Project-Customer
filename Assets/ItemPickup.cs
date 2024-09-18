@@ -63,7 +63,12 @@ public class ItemPickup : MonoBehaviour
                 }
             }
             if (hit.collider.gameObject.CompareTag("Interactable")){
-                PlayerPopUp.NewPopUp("Press",0);
+                if (hit.collider.gameObject.GetComponent<FinishDayButton>()){
+                    PlayerPopUp.NewPopUp("Finish Day",0);
+                }
+                else{
+                    PlayerPopUp.NewPopUp("Press",0);
+                }
                 Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
                 if (Input.GetKey(KeyCode.E)){
                     interactable.Interact();

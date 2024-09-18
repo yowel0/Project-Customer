@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CounterScript : MonoBehaviour
 {
+    public GameCycleManager gameCycleManager;
+
+    public GameStats gameStats;
 
     public Slot vapeSlot;
     public Slot orderSlot;
@@ -22,7 +26,16 @@ public class CounterScript : MonoBehaviour
         
     }
 
-    public void Compare(){
+    public void Click(){
+        Compare();
+        if (vapeSlot.itemHeld != null && orderSlot.itemHeld != null){
+            gameCycleManager.RemoveCustomer(orderSlot.itemHeld.GetComponent<OrderScript>().customerScript);
+            Destroy(orderSlot.itemHeld);
+            Destroy(vapeSlot.itemHeld);
+        }
+    }
+
+    void Compare(){
         if (vapeSlot.itemHeld != null && orderSlot.itemHeld != null){
             VapeInfo vapeInfo = vapeSlot.itemHeld.GetComponent<VapeInfo>();
             OrderScript orderScript = orderSlot.itemHeld.GetComponent<OrderScript>();
@@ -49,8 +62,10 @@ public class CounterScript : MonoBehaviour
                 }
             }
             nicotineError = Mathf.Abs(vapeInfo.nicotine - orderScript.nicotine);
-
-            print("Correct case: " + caseColor + "\r\n" + "Correct cap: " + capColor + "\r\n" + "Amount of wrong flavours: " + wrongFlavours + "\r\n" + "Nicotine Error: " + nicotineError);
+            OrderResults orderResults = new OrderResults(caseColor,capColor,vapeInfo.capMisses,wrongFlavours,nicotineError);
+            gameStats.AddResult(orderResults);
+            print(gameStats.stats.resultsList[gameStats.day - 1].results[gameStats.stats.resultsList[gameStats.day - 1].results.Count-1]); 
+            //print("Correct case: " + caseColor + "\r\n" + "Correct cap: " + capColor + "\r\n" + "Amount of wrong flavours: " + wrongFlavours + "\r\n" + "Nicotine Error: " + nicotineError);
         }
     }
 }

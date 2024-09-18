@@ -8,6 +8,7 @@ using UnityEngine;
 public class OrderScript : MonoBehaviour
 {
     public Customer customer;
+    public CustomerScript customerScript;
 
     List<VapeInfo.CasingColor> possibleCasingColors;
     List<flavour.FlavourType> possibleFlavourTypes;
@@ -25,8 +26,6 @@ public class OrderScript : MonoBehaviour
         else if(customer != null){
             GenerateCustomerOrder();
         }
-        print("AWAK");
-
     }
 
     void GenerateOrder(){

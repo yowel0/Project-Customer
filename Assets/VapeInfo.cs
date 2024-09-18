@@ -13,6 +13,7 @@ public class VapeInfo : MonoBehaviour
     public CasingColor caseColor;
     public CasingColor capColor;
     
+    public int capMisses;
     
     [Header("Flavour")]
     public List<flavour.FlavourType> flavours;

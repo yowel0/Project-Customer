@@ -60,6 +60,7 @@ public class Workbench : MonoBehaviour
 
         GameObject caseGo = caseSlot.itemHeld;
         GameObject cap = capSlot.itemHeld;
+        caseGo.GetComponent<VapeInfo>().capMisses = pMisses;
         cap.transform.parent = caseSlot.itemHeld.transform;
         Destroy(capSlot.itemHeld.GetComponent<Rigidbody>());
         cap.GetComponent<ItemScript>().Release();

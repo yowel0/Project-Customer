@@ -31,10 +31,14 @@ public class CustomerScript : Interactable
     }
 
     void GenerateOrder(){
-        if (currentOrder != null){
-            Destroy(currentOrder);
+        if (currentOrder == null){
+            order.GetComponent<OrderScript>().customer = customer;
+            order.GetComponent<OrderScript>().customerScript = this;
+            currentOrder = Instantiate(order, transform.position + Vector3.up * 2, transform.rotation);
         }
-        order.GetComponent<OrderScript>().customer = customer;
-        currentOrder = Instantiate(order, transform.position + Vector3.up * 2, transform.rotation);
+        else{
+            currentOrder.GetComponent<ItemScript>().Release();
+            currentOrder.transform.position = transform.position + Vector3.up * 2;
+        }
     }
 }
