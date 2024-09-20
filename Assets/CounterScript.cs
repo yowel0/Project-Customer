@@ -30,6 +30,7 @@ public class CounterScript : MonoBehaviour
         Compare();
         if (vapeSlot.itemHeld != null && orderSlot.itemHeld != null){
             gameCycleManager.RemoveCustomer(orderSlot.itemHeld.GetComponent<OrderScript>().customerScript);
+            orderSlot.itemHeld.GetComponent<OrderScript>().customer.health -= Mathf.RoundToInt(vapeSlot.itemHeld.GetComponent<VapeInfo>().nicotine);
             Destroy(orderSlot.itemHeld);
             Destroy(vapeSlot.itemHeld);
         }

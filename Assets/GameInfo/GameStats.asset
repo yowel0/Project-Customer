@@ -12,12 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd816b84fafc9d149a65feb023acf56b, type: 3}
   m_Name: GameStats
   m_EditorClassIdentifier: 
-  day: 3
+  day: 1
   stats:
-    resultsList:
-    - results:
-      - {fileID: 0}
-    - results:
-      - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
+    resultsList: []

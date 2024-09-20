@@ -21,7 +21,12 @@ public class CustomerScript : Interactable
     }
 
     void LoadModel(){
-        Instantiate(customer.Model, transform);
+        if(customer.health > 50)
+            Instantiate(customer.Model, transform);
+        else if (customer.health <= 50 && customer.health > 30)
+            Instantiate(customer.Model2, transform);
+        else if (customer.health <= 30)
+            Instantiate(customer.Model3, transform);
     }
 
     public override void Interact()

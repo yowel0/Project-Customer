@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
+  m_Name: Girl Dancer
+  m_EditorClassIdentifier: 
+  health: 100
+  Model: {fileID: 3575774818556235677, guid: 22e1c5319236fd84f85bb3a41c125428, type: 3}
+  Model2: {fileID: 1653173492654861561, guid: cc6606c4f7e180142b8288938fb41f87, type: 3}
+  Model3: {fileID: 9207254601773191294, guid: 12153f5e350b8594ab492cf30faedb08, type: 3}
+  casingColors: 020000000100000003000000
+  capColors: 030000000100000002000000
+  nicotineValues:
+  - 10
+  - 20
+  - 30
+  maxFlavourAmount: 1
+  flavourTypes: 000000000100000002000000

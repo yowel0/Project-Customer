@@ -64,7 +64,7 @@ public class Workbench : MonoBehaviour
         cap.transform.parent = caseSlot.itemHeld.transform;
         Destroy(capSlot.itemHeld.GetComponent<Rigidbody>());
         cap.GetComponent<ItemScript>().Release();
-        cap.transform.localPosition = Vector3.zero - new Vector3(0,.02f,0);
+        cap.transform.localPosition = Vector3.zero;
         cap.tag = "Untagged";
         cap.layer = 0;
         caseGo.GetComponent<VapeInfo>().capColor = cap.GetComponent<CapScript>().capColor;

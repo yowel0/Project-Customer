@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
   m_Name: Patricia
   m_EditorClassIdentifier: 
+  health: -20
   Model: {fileID: 6349943640574080265, guid: c10523d339a584245b656e9e0b1b8bd1, type: 3}
+  Model2: {fileID: 4351471540773520914, guid: 55197919016596b459f9a6caef512931, type: 3}
+  Model3: {fileID: 4789513709246716233, guid: 3c06d757d40ccf6429824c4464927511, type: 3}
   casingColors: 010000000200000003000000
   capColors: 010000000200000003000000
   nicotineValues:

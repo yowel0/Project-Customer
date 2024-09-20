@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.09
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.11867512
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.043897606
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.168
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: -5754084199372789682, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1039584963472751364, guid: 52b377f7c3de1aa4ca88131c53502dde, type: 3}
+      objectReference: {fileID: -6358116960771394125, guid: 48f8fa5a921af7146a9aa428c630686e, type: 3}
     - target: {fileID: 919132149155446097, guid: a12fcb866f006354eb2e90538cfcbff4, type: 3}
       propertyPath: m_Name
       value: red vape
@@ -135,7 +135,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1039584963472751364, guid: 52b377f7c3de1aa4ca88131c53502dde, type: 3}
+  m_Mesh: {fileID: -6358116960771394125, guid: 48f8fa5a921af7146a9aa428c630686e, type: 3}
 --- !u!114 &2503977491637234325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,5 +197,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caseColor: 3
   capColor: 0
+  capMisses: 0
   flavours: 
   nicotine: 0

@@ -43,7 +43,12 @@ public class ItemScript : Outline
             if (rb != null){
                 rb.velocity = Vector3.zero;
             }
-            transform.rotation = containingObject.transform.rotation;
+            if (containingObject.CompareTag("Player")){
+                transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,-90,0);
+            }
+            else{
+                transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,90,0);
+            }
         } 
     }
 

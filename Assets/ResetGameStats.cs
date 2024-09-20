@@ -6,6 +6,9 @@ public class ResetGameStats : MonoBehaviour
 {
     [SerializeField]
     GameStats gameStats;
+
+    [SerializeField]
+    List<Customer> customers = new List<Customer>();
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,9 @@ public class ResetGameStats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M)){
             gameStats.day = 1;
             gameStats.stats = new ResultsList();
+            foreach (var customer in customers){
+                customer.health = 100;
+            }
             Destroy(gameObject);
         }
     }

@@ -81,6 +81,13 @@ public class ItemPickup : MonoBehaviour
                     customer.Interact();
                 }
             }
+            
+            if (hit.collider.gameObject.CompareTag("ToiletDoor")){
+                ToiletDoor toiletDoor = hit.collider.gameObject.GetComponent<ToiletDoor>();
+                if (Input.GetKeyDown(KeyCode.E)){
+                    toiletDoor.Interact();
+                }
+            }
         }
     }
 }
