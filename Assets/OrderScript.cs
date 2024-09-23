@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrderScript : MonoBehaviour
 {
@@ -17,6 +19,17 @@ public class OrderScript : MonoBehaviour
     public List<flavour.FlavourType> flavours;
     public float nicotine;
 
+    public Image capImage;
+    public Image caseImage;
+    public TextMeshProUGUI nicotineText;
+    public GameObject flavourUIList;
+    public GameObject flavourImagePrefab;
+
+    public Sprite bluecheese;
+    public Sprite coal;
+    public Sprite grass;
+    public Sprite tire;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,6 +39,7 @@ public class OrderScript : MonoBehaviour
         else if(customer != null){
             GenerateCustomerOrder();
         }
+        InstantiateUI();
     }
 
     void GenerateOrder(){
@@ -35,9 +49,10 @@ public class OrderScript : MonoBehaviour
             VapeInfo.CasingColor.Red
         };
         possibleFlavourTypes = new List<flavour.FlavourType>(){
-            flavour.FlavourType.Watermelon,
-            flavour.FlavourType.Blueberry,
-            flavour.FlavourType.Strawberry
+            flavour.FlavourType.BlueCheese,
+            flavour.FlavourType.CarTire,
+            flavour.FlavourType.Grass,
+            flavour.FlavourType.Coal
         };
 
         caseColor = possibleCasingColors[Random.Range(0,3)];
@@ -88,5 +103,51 @@ public class OrderScript : MonoBehaviour
         flavours[2];
         }
         return standard;
+    }
+
+    void InstantiateUI(){
+        switch (capColor){
+            case VapeInfo.CasingColor.Blue:
+                capImage.color = Color.blue;
+            break;
+            case VapeInfo.CasingColor.Green:
+                capImage.color = Color.green;
+            break;
+            case VapeInfo.CasingColor.Red:
+                capImage.color = Color.red;
+            break;
+        }
+
+        switch (caseColor){
+            case VapeInfo.CasingColor.Blue:
+                caseImage.color = Color.blue;
+            break;
+            case VapeInfo.CasingColor.Green:
+                caseImage.color = Color.green;
+            break;
+            case VapeInfo.CasingColor.Red:
+                caseImage.color = Color.red;
+            break;
+        }
+        
+        nicotineText.text = nicotine + "";
+
+        for (int i = 0; i < flavours.Count; i++){
+            Image flavourImage = Instantiate(flavourImagePrefab, flavourUIList.transform).GetComponent<Image>();
+            switch (flavours[i]){
+                case flavour.FlavourType.BlueCheese:
+                    flavourImage.sprite = bluecheese;
+                break;
+                case flavour.FlavourType.CarTire:
+                    flavourImage.sprite = tire;
+                break;
+                case flavour.FlavourType.Grass:
+                    flavourImage.sprite = grass;
+                break;
+                case flavour.FlavourType.Coal:
+                    flavourImage.sprite = coal;
+                break;
+            }
+        }
     }
 }

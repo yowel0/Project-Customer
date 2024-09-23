@@ -43,11 +43,21 @@ public class ItemScript : Outline
             if (rb != null){
                 rb.velocity = Vector3.zero;
             }
-            if (containingObject.CompareTag("Player")){
-                transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,-90,0);
+            if (itemType == ItemType.Casing || itemType == ItemType.Cap){
+                if (containingObject.CompareTag("Player")){
+                    transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,-90,0);
+                }
+                else{
+                    transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,90,0);
+                }
             }
-            else{
-                transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,90,0);
+            else if(itemType == ItemType.Order){
+                if (containingObject.CompareTag("Player")){
+                    transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,0,0);
+                }
+                else{
+                    transform.eulerAngles = containingObject.transform.eulerAngles + new Vector3(0,180,0);
+                }
             }
         } 
     }

@@ -94,7 +94,7 @@ public class Outline : MonoBehaviour {
 
     // Retrieve or generate smooth normals
     
-    LoadSmoothNormals();
+    //LoadSmoothNormals();
 
     // Apply material properties immediately
     needsUpdate = true;
@@ -178,7 +178,7 @@ public class Outline : MonoBehaviour {
     }
   }
 
-  void LoadSmoothNormals() {
+  /*void LoadSmoothNormals() {
 
     // Retrieve or generate smooth normals
     foreach (var meshFilter in GetComponentsInChildren<MeshFilter>()) {
@@ -217,7 +217,7 @@ public class Outline : MonoBehaviour {
       // Combine submeshes
       CombineSubmeshes(skinnedMeshRenderer.sharedMesh, skinnedMeshRenderer.sharedMaterials);
     }
-  }
+  } */
 
   List<Vector3> SmoothNormals(Mesh mesh) {
 

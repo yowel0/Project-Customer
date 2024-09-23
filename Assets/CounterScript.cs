@@ -13,11 +13,12 @@ public class CounterScript : MonoBehaviour
     public Slot vapeSlot;
     public Slot orderSlot;
 
+    CustomerSoundManager customerSoundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        customerSoundManager = GameObject.FindWithTag("CustomerSoundManager").GetComponent<CustomerSoundManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class CounterScript : MonoBehaviour
         if (vapeSlot.itemHeld != null && orderSlot.itemHeld != null){
             gameCycleManager.RemoveCustomer(orderSlot.itemHeld.GetComponent<OrderScript>().customerScript);
             orderSlot.itemHeld.GetComponent<OrderScript>().customer.health -= Mathf.RoundToInt(vapeSlot.itemHeld.GetComponent<VapeInfo>().nicotine);
+            customerSoundManager.PlaySoundFromList(orderSlot.itemHeld.GetComponent<OrderScript>().customer.exitSounds);
             Destroy(orderSlot.itemHeld);
             Destroy(vapeSlot.itemHeld);
         }

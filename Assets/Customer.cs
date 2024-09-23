@@ -18,4 +18,8 @@ public class Customer : ScriptableObject
 
     public int maxFlavourAmount;
     public flavour.FlavourType[] flavourTypes;
+
+    public List<AudioClip> orderSounds = new List<AudioClip>();
+    public List<AudioClip> exitSounds = new List<AudioClip>();
+    public List<AudioClip> randomSounds = new List<AudioClip>();
 }

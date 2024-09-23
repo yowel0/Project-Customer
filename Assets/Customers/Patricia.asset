@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
   m_Name: Patricia
   m_EditorClassIdentifier: 
-  health: -20
+  health: 100
   Model: {fileID: 6349943640574080265, guid: c10523d339a584245b656e9e0b1b8bd1, type: 3}
   Model2: {fileID: 4351471540773520914, guid: 55197919016596b459f9a6caef512931, type: 3}
   Model3: {fileID: 4789513709246716233, guid: 3c06d757d40ccf6429824c4464927511, type: 3}
@@ -24,3 +24,7 @@ MonoBehaviour:
   - 55
   maxFlavourAmount: 3
   flavourTypes: 000000000100000002000000
+  orderSounds:
+  - {fileID: 8300000, guid: 5de9efdef24cf4948ac19eff9769d714, type: 3}
+  - {fileID: 8300000, guid: dfc4a49aa714ad04f8ef9e360d83307c, type: 3}
+  - {fileID: 8300000, guid: 95c2a35e4c1051a428104549113f70d3, type: 3}

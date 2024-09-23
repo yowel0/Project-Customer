@@ -27,13 +27,15 @@ public class Slot : MonoBehaviour
 
     void OnTriggerEnter (Collider collider){
         ItemScript item = collider.gameObject.GetComponent<ItemScript>();
-        if (item.itemType == itemTypeRequirement){
-            if (collider.gameObject.CompareTag("Item")){
-                if(ip.itemHeld == collider.gameObject){
-                    ip.itemHeld = null;
+        if (item != null){
+            if (item.itemType == itemTypeRequirement){
+                if (collider.gameObject.CompareTag("Item")){
+                    if(ip.itemHeld == collider.gameObject){
+                        ip.itemHeld = null;
+                    }
+                    itemHeld = collider.gameObject;
+                    item.containingObject = gameObject;
                 }
-                itemHeld = collider.gameObject;
-                item.containingObject = gameObject;
             }
         }
     }

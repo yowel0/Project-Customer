@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Customer
   - ToiletDoor
+  - CustomerSoundManager
   layers:
   - Default
   - TransparentFX

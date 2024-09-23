@@ -5,9 +5,10 @@ using UnityEngine;
 public class flavour : MonoBehaviour
 {
     public enum FlavourType{
-        Strawberry,
-        Watermelon,
-        Blueberry
+        BlueCheese,
+        CarTire,
+        Grass,
+        Coal
     }
     public FlavourType type;
 }

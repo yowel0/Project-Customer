@@ -7,17 +7,20 @@ public class FlavourStation : MonoBehaviour
 {
     public float fillTime;
 
-    public Slot greenSlot;
-    public Slot redSlot;
-    public Slot blueSlot;
+    public Slot tireSlot;
+    public Slot grassSlot;
+    public Slot coalSlot;
+    public Slot cheeseSlot;
 
     float timer1;
     float timer2;
     float timer3;
+    float timer4;
 
     public Slider slider1;
     public Slider slider2;
     public Slider slider3;
+    public Slider slider4;
 
     List<Slot> slots;
     List<float> timers;
@@ -27,19 +30,22 @@ public class FlavourStation : MonoBehaviour
     void Start()
     {
         slots = new List<Slot>(){
-            greenSlot,
-            redSlot,
-            blueSlot
+            tireSlot,
+            grassSlot,
+            coalSlot,
+            cheeseSlot
         };
         timers = new List<float>(){
             timer1,
             timer2,
-            timer3
+            timer3,
+            timer4
         };
         sliders = new List<Slider>(){
             slider1,
             slider2,
-            slider3
+            slider3,
+            slider4
         };
     }
 

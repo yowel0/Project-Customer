@@ -10,10 +10,10 @@ public class OrderResults : MonoBehaviour
     int wrongFlavours = 0;
     float nicotineError = 0;
 
-    float caseScore = 0;
-    float capScore = 0;
-    float flavourScore = 0;
-    float nicotineScore = 0;
+    public float caseScore = 0;
+    public float capScore = 0;
+    public float flavourScore = 0;
+    public float nicotineScore = 0;
 
     public float orderScore;
     public OrderResults(bool pCaseColor, bool pCapColor, int pCapMisses, int pWrongFlavours, float pNicotineError){
