@@ -15,6 +15,7 @@ public class GameCycleManager : MonoBehaviour
     public List<GameObject> leavingCustomers = new List<GameObject>();
 
     public Transform spawnPoint;
+    public Transform queuePoint;
 
     public float moveSpeed;
 
@@ -58,18 +59,18 @@ public class GameCycleManager : MonoBehaviour
 
     void SetCustomerPositions(){
         for(int i = 0; i < instantiatedCustomers.Count; i++){
-            instantiatedCustomers[i].transform.position = new Vector3(19.15f,0,1.3f + i);
+            instantiatedCustomers[i].transform.position = queuePoint.position + new Vector3(0,0,i);
             instantiatedCustomers[i].transform.eulerAngles = new Vector3(0,180,0);
         }
     }
 
     void MoveToPosition(){
         for(int i = 0; i < instantiatedCustomers.Count; i++){
-            if ((new Vector3(19.15f,0,1.3f + i) - instantiatedCustomers[i].transform.position).magnitude <= moveSpeed){
-                instantiatedCustomers[i].transform.position = new Vector3(19.15f,0,1.3f + i);
+            if ((queuePoint.position + new Vector3(0,0,i) - instantiatedCustomers[i].transform.position).magnitude <= moveSpeed){
+                instantiatedCustomers[i].transform.position = queuePoint.position + new Vector3(0,0,i);
             }
             else{
-                instantiatedCustomers[i].transform.position += (new Vector3(19.15f,0,1.3f + i) - instantiatedCustomers[i].transform.position).normalized * moveSpeed;
+                instantiatedCustomers[i].transform.position += (queuePoint.position + new Vector3(0,0,i) - instantiatedCustomers[i].transform.position).normalized * moveSpeed;
             }
             //instantiatedCustomers[i].transform.eulerAngles = new Vector3(0,180,0);
         }

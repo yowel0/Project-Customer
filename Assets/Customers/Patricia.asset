@@ -28,3 +28,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5de9efdef24cf4948ac19eff9769d714, type: 3}
   - {fileID: 8300000, guid: dfc4a49aa714ad04f8ef9e360d83307c, type: 3}
   - {fileID: 8300000, guid: 95c2a35e4c1051a428104549113f70d3, type: 3}
+  exitSounds:
+  - {fileID: 8300000, guid: 60fb22b80b285054ba376d7e49db0f30, type: 3}
+  randomSounds:
+  - {fileID: 8300000, guid: 4b2dbb19dbb0c6b42b411ad03041db1b, type: 3}
+  - {fileID: 8300000, guid: ae2895acd67dd8f4a8d200a8e2346f82, type: 3}
+  - {fileID: 8300000, guid: 6aab8fff229808e4991edc3a24c7603c, type: 3}

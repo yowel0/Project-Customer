@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,12 +11,18 @@ public class Intermission : MonoBehaviour
     public GameStats gameStats;
     public TextMeshProUGUI header;
     public TextMeshProUGUI text;
+    public TextMeshProUGUI dayCountText;
+    public TextMeshProUGUI totalScoreText;
+    public TextMeshProUGUI didYouKnowText;
+
+    public List<String> dykTextList;
 
 
     float capscore = 0;
     float nicotinescore = 0;
     float flavourscore = 0;
     float casingscore = 0;
+    float totalScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -44,8 +51,19 @@ public class Intermission : MonoBehaviour
             nicotinescore += orderResults.nicotineScore;
             flavourscore += orderResults.flavourScore;
             casingscore += orderResults.caseScore;
+
+            totalScore += (orderResults.capScore + orderResults.nicotineScore + orderResults.flavourScore + orderResults.caseScore) / 4;
         }
-        text.text += capscore + "\r\n" + nicotinescore + "\r\n" + flavourscore + "\r\n" + casingscore;
+        capscore = capscore / gameStats.LatestDayOrders().results.Count;
+        nicotinescore = Mathf.Round(nicotinescore / gameStats.LatestDayOrders().results.Count);
+        flavourscore = Mathf.Round(flavourscore / gameStats.LatestDayOrders().results.Count);
+        casingscore = Mathf.Round(casingscore / gameStats.LatestDayOrders().results.Count);
+        totalScore = Mathf.Round(totalScore / gameStats.LatestDayOrders().results.Count);
+        text.text += capscore + "\r\n" + "\r\n" + nicotinescore + "\r\n" + "\r\n" + flavourscore + "\r\n" + "\r\n" + casingscore;
+
+        didYouKnowText.text = dykTextList[UnityEngine.Random.Range(0, dykTextList.Count)];
+        totalScoreText.text = totalScore.ToString();
+        dayCountText.text = gameStats.day.ToString();
     }
 
     // Update is called once per frame

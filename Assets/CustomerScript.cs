@@ -25,13 +25,13 @@ public class CustomerScript : Interactable
     {
         if (timerStarted){
             timer -= Time.deltaTime;
+            print(timer);
             if (timer <= 0){
                 timerStarted = false;
                 customerSoundManager.PlaySoundFromList(customer.randomSounds);
+                print("Raondmondsoudnd)");
             }
         }
-
-        transform.eulerAngles += new Vector3(0,3,0);
     }
 
     void LoadModel(){
@@ -51,6 +51,7 @@ public class CustomerScript : Interactable
 
     void GenerateOrder(){
         customerSoundManager.PlaySoundFromList(customer.orderSounds);
+        StartTimerVoiceline();
         if (currentOrder == null){
             order.GetComponent<OrderScript>().customer = customer;
             order.GetComponent<OrderScript>().customerScript = this;
