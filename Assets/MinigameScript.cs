@@ -13,12 +13,13 @@ public class MinigameScript : MonoBehaviour
     public float pointerSpeed;
     public float missAddAmount = 0.05f;
     int misses = 0;
+    public AudioSource missSound;
     // Start is called before the first frame update
     void Awake()
     {
         sliderTransform = slider.GetComponent<RectTransform>();
         workbench = FindAnyObjectByType<Workbench>();
-                RelocateSlider();
+        RelocateSlider();
     }
 
     // Update is called once per frame
@@ -28,13 +29,14 @@ public class MinigameScript : MonoBehaviour
         if (pointer.eulerAngles.z <= -360){
             pointer.eulerAngles = pointer.eulerAngles + new Vector3(0,0,pointer.rotation.z + 360);
         }
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.E)){
             if (CheckHit()){
                 workbench.Win(misses);
             }
             else{
                 misses++;
                 RelocateSlider(missAddAmount);
+                missSound.Play();
             }
         }
     }

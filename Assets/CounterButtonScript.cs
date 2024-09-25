@@ -8,7 +8,7 @@ public class CounterButtonScript : Interactable
 
     public override void Interact()
     {
-        //base.Interact();
+        base.Interact();
         counterScript.Click();
     }
 }

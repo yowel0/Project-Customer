@@ -13,6 +13,10 @@ public class Nicotinizer : MonoBehaviour
     public Gradient gradient;
     VapeInfo vapeInfo;
     public Image fill;
+    public AudioSource audioSource;
+    public AudioClip hold;
+
+    private float oldNicotine;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +38,19 @@ public class Nicotinizer : MonoBehaviour
 
     public void Fill(){
         if (slot.itemHeld != null){
+            if (vapeInfo.nicotine == 0){
+                PlaySound(hold);
+            }
             vapeInfo.nicotine += Time.deltaTime * fillSpeed;
             if(vapeInfo.nicotine > 100){
                 vapeInfo.nicotine = 100;
             }
+            oldNicotine = vapeInfo.nicotine;
         }
+    }
+
+    void PlaySound(AudioClip audioClip){
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }

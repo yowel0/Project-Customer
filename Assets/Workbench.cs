@@ -11,6 +11,7 @@ public class Workbench : MonoBehaviour
     public GameObject workbenchCanvas;
     private GameObject wbcInst;
     public Canvas canvas;
+    public AudioSource craftSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +58,8 @@ public class Workbench : MonoBehaviour
 
     public void Win(int pMisses){
         ToggleWorkbenchMinigame();
+
+        craftSound.Play();
 
         GameObject caseGo = caseSlot.itemHeld;
         GameObject cap = capSlot.itemHeld;

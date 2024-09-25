@@ -7,7 +7,7 @@ public class NicotinizerButtonScript : Interactable
     public Nicotinizer nicotinizer;
     public override void Interact()
     {
-        //base.Interact();
+        base.Interact();
         nicotinizer.Fill();
     }
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Emma
   m_EditorClassIdentifier: 
   health: 100
+  sprite: {fileID: 21300000, guid: 32087201130755c4989b5edd9b432076, type: 3}
   Model: {fileID: 5874856526677020436, guid: da646f43efd29404893018fdca13a37e, type: 3}
   Model2: {fileID: 6980988346732006841, guid: b37fc0b39decd7f4cb0d8d8585099d53, type: 3}
   Model3: {fileID: 4691573552673824625, guid: 6fcca0961992ada4ea7479995f378d64, type: 3}
@@ -25,3 +26,5 @@ MonoBehaviour:
   maxFlavourAmount: 3
   flavourTypes: 000000000100000002000000
   orderSounds: []
+  exitSounds: []
+  randomSounds: []

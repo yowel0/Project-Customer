@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    Vector3 startpos;
+    Vector4 childStartpos;
+    float ntimer;
+    void Start(){
+        startpos = transform.localPosition;
+        if (transform.childCount > 0){
+            childStartpos = transform.GetChild(0).position;
+        }
+    }
+
     void Update(){
-        if (Input.GetKeyDown(KeyCode.O)){
-            Interact();
+        if (ntimer < 0){
+            transform.localPosition = startpos;
+        }
+        ntimer -= Time.deltaTime;
+        if (transform.childCount > 0){
+            transform.GetChild(0).position = childStartpos;
         }
     }
 
     public virtual void Interact(){
-        print("Interact111");
+        transform.localPosition = startpos + Vector3.down * .05f;
+        ntimer = 0;
     }
 }

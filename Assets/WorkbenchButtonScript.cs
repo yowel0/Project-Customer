@@ -7,7 +7,7 @@ public class WorkbenchButtonScript : Interactable
     public Workbench workbench;
     public override void Interact()
     {
-        //base.Interact();
+        base.Interact();
         workbench.Hit();
     }
 }

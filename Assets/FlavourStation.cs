@@ -26,6 +26,8 @@ public class FlavourStation : MonoBehaviour
     List<float> timers;
     List<Slider> sliders;
 
+    public AudioSource machineSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,8 +54,21 @@ public class FlavourStation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int amountplaying = 0;
         for (int i = 0; i < slots.Count; i++){
             timers[i] = CheckSlot(slots[i],timers[i],sliders[i]);
+            if (timers[i] > 0 && timers[i] < 5){
+                amountplaying += 1;
+            }
+        }
+
+        if (amountplaying > 0){
+            if (!machineSound.isPlaying){
+                machineSound.Play();
+            }
+        }
+        else{
+            machineSound.Stop();
         }
     }
 

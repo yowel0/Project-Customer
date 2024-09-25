@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canJump;
     public float jumpHeight;
 
+    public AudioSource footsteps;
 
 
     // Start is called before the first frame update
@@ -52,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
         input.Normalize();
+        if (!footsteps.isPlaying && input.magnitude > 0){
+            footsteps.Play();
+        }
+        else if (footsteps.isPlaying && input.magnitude == 0){
+            footsteps.Pause();
+        }
 
         //if Camera active as child in player > make the mouse rotate camera and player
         if (firstPerson){

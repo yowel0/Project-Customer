@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Zoe
   m_EditorClassIdentifier: 
   health: 100
+  sprite: {fileID: 21300000, guid: 32087201130755c4989b5edd9b432076, type: 3}
   Model: {fileID: 3575774818556235677, guid: 22e1c5319236fd84f85bb3a41c125428, type: 3}
   Model2: {fileID: 1653173492654861561, guid: cc6606c4f7e180142b8288938fb41f87, type: 3}
   Model3: {fileID: 9207254601773191294, guid: 12153f5e350b8594ab492cf30faedb08, type: 3}
@@ -24,3 +25,6 @@ MonoBehaviour:
   - 30
   maxFlavourAmount: 1
   flavourTypes: 000000000100000002000000
+  orderSounds: []
+  exitSounds: []
+  randomSounds: []

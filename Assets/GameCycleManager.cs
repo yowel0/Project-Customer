@@ -19,6 +19,8 @@ public class GameCycleManager : MonoBehaviour
 
     public float moveSpeed;
 
+    public AudioSource bell;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -53,24 +55,25 @@ public class GameCycleManager : MonoBehaviour
     }
 
     void InstantiateCustomer(Customer customer){
+        bell.Play();
         customerPrefab.GetComponent<CustomerScript>().customer = customer;
         instantiatedCustomers.Add(Instantiate(customerPrefab,spawnPoint.position,new quaternion(0,180,0,0)));
     }
 
     void SetCustomerPositions(){
         for(int i = 0; i < instantiatedCustomers.Count; i++){
-            instantiatedCustomers[i].transform.position = queuePoint.position + new Vector3(0,0,i);
+            instantiatedCustomers[i].transform.position = queuePoint.position + new Vector3(i,0,0);
             instantiatedCustomers[i].transform.eulerAngles = new Vector3(0,180,0);
         }
     }
 
     void MoveToPosition(){
         for(int i = 0; i < instantiatedCustomers.Count; i++){
-            if ((queuePoint.position + new Vector3(0,0,i) - instantiatedCustomers[i].transform.position).magnitude <= moveSpeed){
-                instantiatedCustomers[i].transform.position = queuePoint.position + new Vector3(0,0,i);
+            if ((queuePoint.position + new Vector3(i,0,0) - instantiatedCustomers[i].transform.position).magnitude <= moveSpeed){
+                instantiatedCustomers[i].transform.position = queuePoint.position + new Vector3(i,0,0);
             }
             else{
-                instantiatedCustomers[i].transform.position += (queuePoint.position + new Vector3(0,0,i) - instantiatedCustomers[i].transform.position).normalized * moveSpeed;
+                instantiatedCustomers[i].transform.position += (queuePoint.position + new Vector3(i,0,0) - instantiatedCustomers[i].transform.position).normalized * moveSpeed;
             }
             //instantiatedCustomers[i].transform.eulerAngles = new Vector3(0,180,0);
         }

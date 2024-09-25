@@ -30,8 +30,8 @@ public class OrderResults : MonoBehaviour
             caseScore = 100 - capMisses * 10;
         if (capColor)
             capScore = 100 - capMisses * 10;
-        flavourScore = 100 - 25 / 4 * (float)wrongFlavours;
-        nicotineScore += 100f - Mathf.Round(nicotineError);
+        flavourScore = Mathf.Clamp(100 - 50 * (float)wrongFlavours,0,100);
+        nicotineScore = Mathf.Clamp(100f - Mathf.Round(nicotineError * 5),0,100);
 
         orderScore = (caseScore + capScore + flavourScore + nicotineScore) / 4;
     }

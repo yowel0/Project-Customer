@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Patricia
   m_EditorClassIdentifier: 
   health: 100
+  sprite: {fileID: 21300000, guid: 270aacef288ac6645ac78be2be064d66, type: 3}
   Model: {fileID: 6349943640574080265, guid: c10523d339a584245b656e9e0b1b8bd1, type: 3}
   Model2: {fileID: 4351471540773520914, guid: 55197919016596b459f9a6caef512931, type: 3}
   Model3: {fileID: 4789513709246716233, guid: 3c06d757d40ccf6429824c4464927511, type: 3}

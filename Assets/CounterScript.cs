@@ -15,6 +15,8 @@ public class CounterScript : MonoBehaviour
 
     CustomerSoundManager customerSoundManager;
 
+    public AudioSource orderCompleteSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class CounterScript : MonoBehaviour
             customerSoundManager.PlaySoundFromList(orderSlot.itemHeld.GetComponent<OrderScript>().customer.exitSounds);
             Destroy(orderSlot.itemHeld);
             Destroy(vapeSlot.itemHeld);
+            orderCompleteSound.Play();
         }
     }
 

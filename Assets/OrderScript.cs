@@ -130,7 +130,7 @@ public class OrderScript : MonoBehaviour
             break;
         }
         
-        nicotineText.text = nicotine + "";
+        nicotineText.text = nicotine + "%";
 
         for (int i = 0; i < flavours.Count; i++){
             Image flavourImage = Instantiate(flavourImagePrefab, flavourUIList.transform).GetComponent<Image>();

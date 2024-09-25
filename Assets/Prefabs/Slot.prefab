@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHeld: {fileID: 0}
+  itemTypeRequirement: 0
+  holoCapPrefab: {fileID: 1686200711971105842, guid: d9434d6744b29154995081a77eb08991, type: 3}
+  holoCasePrefab: {fileID: 1672683921327487149, guid: af1c5e04fa3a8fe44bc1064c0df3429b, type: 3}
+  holoOrderPrefab: {fileID: 6471161034251452376, guid: d4be1ac2fa5318448bed4955b206c37c, type: 3}
 --- !u!135 &5121587034774237295
 SphereCollider:
   m_ObjectHideFlags: 0

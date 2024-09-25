@@ -7,6 +7,7 @@ using UnityEditor;
 public class Customer : ScriptableObject
 {
     public int health = 100;
+    public Sprite sprite;
     public GameObject Model;
     public GameObject Model2;
     public GameObject Model3;

@@ -7,6 +7,9 @@ public class ItemPickup : MonoBehaviour
     Transform cameraTransform;
     LayerMask mask;
     public GameObject itemHeld;
+    public AudioSource audioSource;
+    public AudioClip pickupSound;
+    public AudioClip vapePickupSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,10 +46,10 @@ public class ItemPickup : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Item")){
                 OrderScript order = hit.collider.gameObject.GetComponent<OrderScript>();
                 if (order != null){
-                    PlayerPopUp.NewPopUp(order.orderString(),0);
+                    //PlayerPopUp.NewPopUp(order.orderString(),0);
                 }
                 else {
-                    PlayerPopUp.NewPopUp("Pick Up",0);
+                    PlayerPopUp.NewPopUp("E to Pick Up",0);
                 }
                 ItemScript item = hit.collider.gameObject.GetComponent<ItemScript>();
                 if (item != null){
@@ -60,14 +63,23 @@ public class ItemPickup : MonoBehaviour
                     item.Release();
                     itemHeld = hit.collider.gameObject;
                     item.containingObject = gameObject;
+                    if (item.itemType == ItemScript.ItemType.Order){
+                        PlaySound(pickupSound);
+                    }
+                    else{
+                        PlaySound(vapePickupSound);
+                    }
                 }
             }
             if (hit.collider.gameObject.CompareTag("Interactable")){
                 if (hit.collider.gameObject.GetComponent<FinishDayButton>()){
                     PlayerPopUp.NewPopUp("Finish Day",0);
                 }
+                else if (hit.collider.gameObject.GetComponent<NicotinizerButtonScript>()){
+                    PlayerPopUp.NewPopUp("Hold E to Fill",0);
+                }
                 else{
-                    PlayerPopUp.NewPopUp("Press",0);
+                    PlayerPopUp.NewPopUp("Press E to Interact",0);
                 }
                 Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
                 if (Input.GetKey(KeyCode.E)){
@@ -75,7 +87,7 @@ public class ItemPickup : MonoBehaviour
                 }
             }
             if (hit.collider.gameObject.CompareTag("Customer")){
-                PlayerPopUp.NewPopUp("Take Order",0);
+                PlayerPopUp.NewPopUp("Press E to Take Order",0);
                 CustomerScript customer = hit.collider.gameObject.GetComponent<CustomerScript>();
                 if (Input.GetKeyDown(KeyCode.E)){
                     customer.Interact();
@@ -83,11 +95,17 @@ public class ItemPickup : MonoBehaviour
             }
             
             if (hit.collider.gameObject.CompareTag("ToiletDoor")){
+                PlayerPopUp.NewPopUp("Press E to Interact",0);
                 ToiletDoor toiletDoor = hit.collider.gameObject.GetComponent<ToiletDoor>();
                 if (Input.GetKeyDown(KeyCode.E)){
                     toiletDoor.Interact();
                 }
             }
         }
+    }
+
+    void PlaySound(AudioClip audioClip){
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }
