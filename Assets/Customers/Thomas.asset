@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
   m_Name: Thomas
   m_EditorClassIdentifier: 
+  customerName: Thomas
   health: 100
   sprite: {fileID: 21300000, guid: b583c46763730d440acd48fa2c719e92, type: 3}
-  Model: {fileID: 4810246392507990730, guid: a8aed5a122f0a8b4191b566092bb7ef2, type: 3}
-  Model2: {fileID: 4810246392507990730, guid: bededab2ff4dfb54880aaf598b1517e2, type: 3}
-  Model3: {fileID: 4810246392507990730, guid: a3d8d8f6571ba27438616d11f7013e6f, type: 3}
+  Model: {fileID: 8205242952471253573, guid: ea5edd7c848d41a479f99ef82c155264, type: 3}
+  Model2: {fileID: 1466095571937770459, guid: c506f9c629774c94f802c28500a15859, type: 3}
+  Model3: {fileID: 8502167739536655949, guid: 0fa1dfac52f7b414bbb475c6c1c8819c, type: 3}
   casingColors: 010000000200000003000000
   capColors: 010000000200000003000000
   nicotineValues:
   - 30
   - 45
   - 55
-  maxFlavourAmount: 3
-  flavourTypes: 000000000100000002000000
+  maxFlavourAmount: 2
+  flavourTypes: 00000000010000000200000003000000
   orderSounds: []
   exitSounds: []
   randomSounds: []

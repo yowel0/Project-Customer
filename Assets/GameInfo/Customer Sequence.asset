@@ -16,12 +16,8 @@ MonoBehaviour:
     days:
     - customers:
       - {fileID: 11400000, guid: ee6293a42eca5f845b978f68567467c9, type: 2}
-      - {fileID: 11400000, guid: 0c707af82fb6ddd4c9252fa58e3e2957, type: 2}
       - {fileID: 11400000, guid: bd12a70ababe811408c3e066c7867713, type: 2}
-    - customers:
-      - {fileID: 11400000, guid: ee6293a42eca5f845b978f68567467c9, type: 2}
-      - {fileID: 11400000, guid: c660801bbc900b1488af3fb37e001d0a, type: 2}
-      - {fileID: 11400000, guid: bd12a70ababe811408c3e066c7867713, type: 2}
+    - customers: []
     - customers: []
     - customers: []
     - customers: []

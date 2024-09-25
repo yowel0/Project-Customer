@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
   m_Name: Zoe
   m_EditorClassIdentifier: 
+  customerName: Zoe
   health: 100
   sprite: {fileID: 21300000, guid: 32087201130755c4989b5edd9b432076, type: 3}
-  Model: {fileID: 3575774818556235677, guid: 22e1c5319236fd84f85bb3a41c125428, type: 3}
-  Model2: {fileID: 1653173492654861561, guid: cc6606c4f7e180142b8288938fb41f87, type: 3}
-  Model3: {fileID: 9207254601773191294, guid: 12153f5e350b8594ab492cf30faedb08, type: 3}
+  Model: {fileID: 7313189494456093221, guid: 22e1c5319236fd84f85bb3a41c125428, type: 3}
+  Model2: {fileID: 9040561200429304742, guid: d07022287f04b254c91a34bde906cec2, type: 3}
+  Model3: {fileID: 9084392583482595491, guid: 2a8dc14a8e0369243bdd88f02b152ee8, type: 3}
   casingColors: 020000000100000003000000
   capColors: 030000000100000002000000
   nicotineValues:

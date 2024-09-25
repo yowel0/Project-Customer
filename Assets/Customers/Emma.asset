@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
   m_Name: Emma
   m_EditorClassIdentifier: 
+  customerName: Emma
   health: 100
-  sprite: {fileID: 21300000, guid: 32087201130755c4989b5edd9b432076, type: 3}
-  Model: {fileID: 5874856526677020436, guid: da646f43efd29404893018fdca13a37e, type: 3}
-  Model2: {fileID: 6980988346732006841, guid: b37fc0b39decd7f4cb0d8d8585099d53, type: 3}
-  Model3: {fileID: 4691573552673824625, guid: 6fcca0961992ada4ea7479995f378d64, type: 3}
+  sprite: {fileID: 21300000, guid: 13705855a978fab4faf6d53051698ce1, type: 3}
+  Model: {fileID: 688872153302124157, guid: 4a91d798642d4d94ba4877eec54c5fc7, type: 3}
+  Model2: {fileID: 8107323676564410172, guid: a1da2a9a28c44c14f9295801e6e1de21, type: 3}
+  Model3: {fileID: 7737782316373153024, guid: 4bb332b06a730ef41a1ca5ed02fc3980, type: 3}
   casingColors: 010000000200000003000000
   capColors: 010000000200000003000000
   nicotineValues:

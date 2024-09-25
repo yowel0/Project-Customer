@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d43bfaea99fa2940a0cd39f2cf4f622, type: 3}
+  m_Name: Jake
+  m_EditorClassIdentifier: 
+  customerName: Jake
+  health: 100
+  sprite: {fileID: 21300000, guid: 44bc5fd7b59586046a539d23ea32d1ca, type: 3}
+  Model: {fileID: 2963142334891055842, guid: 89ac3c4ca4c32514c812c562503ee193, type: 3}
+  Model2: {fileID: 1397088529324876638, guid: 1eb86031f96a6a047bd7866a5ef5bd22, type: 3}
+  Model3: {fileID: 6716930835811090601, guid: f8ec0d0c03fde144097742753f1ba2a0, type: 3}
+  casingColors: 020000000100000003000000
+  capColors: 030000000100000002000000
+  nicotineValues:
+  - 10
+  - 20
+  - 30
+  maxFlavourAmount: 1
+  flavourTypes: 00000000010000000200000003000000
+  orderSounds: []
+  exitSounds: []
+  randomSounds: []

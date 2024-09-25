@@ -8,6 +8,7 @@ using UnityEngine;
 public class GameStats : ScriptableObject
 {
     public int day;
+    public int deaths = 0;
 
     //public ResultList stats = new ResultList();
     //public List<List<OrderResults>> stats = new List<List<OrderResults>>();
