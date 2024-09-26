@@ -28,9 +28,14 @@ public class FlavourStation : MonoBehaviour
 
     public AudioSource machineSound;
 
+    Tutorial tutorial;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.Find("Tutorial") != null)
+            tutorial = GameObject.Find("Tutorial").GetComponent<Tutorial>();
+
         slots = new List<Slot>(){
             tireSlot,
             grassSlot,
@@ -63,6 +68,11 @@ public class FlavourStation : MonoBehaviour
         }
 
         if (amountplaying > 0){
+            if (tutorial != null){
+                if (tutorial.stage == Tutorial.TutorialStage.fillFlavours){
+                    tutorial.stage = Tutorial.TutorialStage.putInCap;
+                }
+            }
             if (!machineSound.isPlaying){
                 machineSound.Play();
             }

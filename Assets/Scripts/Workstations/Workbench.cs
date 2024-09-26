@@ -12,10 +12,13 @@ public class Workbench : MonoBehaviour
     private GameObject wbcInst;
     public Canvas canvas;
     public AudioSource craftSound;
+
+    Tutorial tutorial;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameObject.Find("Tutorial") != null)
+            tutorial = GameObject.Find("Tutorial").GetComponent<Tutorial>();
     }
 
     // Update is called once per frame
@@ -60,6 +63,12 @@ public class Workbench : MonoBehaviour
         ToggleWorkbenchMinigame();
 
         craftSound.Play();
+
+        if (tutorial != null){
+            if (tutorial.stage == Tutorial.TutorialStage.putInCap){
+                tutorial.stage = Tutorial.TutorialStage.handIn;
+            }
+        }
 
         GameObject caseGo = caseSlot.itemHeld;
         GameObject cap = capSlot.itemHeld;

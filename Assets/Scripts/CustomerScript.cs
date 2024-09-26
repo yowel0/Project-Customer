@@ -13,9 +13,12 @@ public class CustomerScript : Interactable
 
     float timer;
     bool timerStarted;
+    Tutorial tutorial;
     // Start is called before the first frame update
     void Awake()
     {
+        if (GameObject.Find("Tutorial") != null)
+            tutorial = GameObject.Find("Tutorial").GetComponent<Tutorial>();
         customerSoundManager = GameObject.FindWithTag("CustomerSoundManager").GetComponent<CustomerSoundManager>();
         LoadModel();
     }
@@ -50,6 +53,11 @@ public class CustomerScript : Interactable
     }
 
     void GenerateOrder(){
+        if (tutorial != null){
+            if (tutorial.stage == Tutorial.TutorialStage.acceptOrder){
+                tutorial.stage = Tutorial.TutorialStage.pickupCasing;
+            }
+        }
         customerSoundManager.PlaySoundFromList(customer.orderSounds);
         StartTimerVoiceline();
         if (currentOrder == null){

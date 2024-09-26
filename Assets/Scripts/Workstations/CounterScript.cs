@@ -17,9 +17,13 @@ public class CounterScript : MonoBehaviour
 
     public AudioSource orderCompleteSound;
 
+    Tutorial tutorial;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.Find("Tutorial") != null)
+            tutorial = GameObject.Find("Tutorial").GetComponent<Tutorial>();
         customerSoundManager = GameObject.FindWithTag("CustomerSoundManager").GetComponent<CustomerSoundManager>();
     }
 
@@ -38,6 +42,12 @@ public class CounterScript : MonoBehaviour
             Destroy(orderSlot.itemHeld);
             Destroy(vapeSlot.itemHeld);
             orderCompleteSound.Play();
+
+            if (tutorial != null){
+                if (tutorial.stage == Tutorial.TutorialStage.handIn){
+                    tutorial.stage = Tutorial.TutorialStage.finished;
+                }
+            }
         }
     }
 

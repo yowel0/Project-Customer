@@ -10,9 +10,12 @@ public class ItemPickup : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip pickupSound;
     public AudioClip vapePickupSound;
+    Tutorial tutorial;
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.Find("Tutorial") != null)
+            tutorial = GameObject.Find("Tutorial").GetComponent<Tutorial>();
         cameraTransform = GameObject.FindWithTag("MainCamera").transform;
         mask = LayerMask.GetMask("Item","Interactable");
     }
@@ -63,6 +66,13 @@ public class ItemPickup : MonoBehaviour
                     item.Release();
                     itemHeld = hit.collider.gameObject;
                     item.containingObject = gameObject;
+                    if (item.itemType == ItemScript.ItemType.Casing){
+                        if (tutorial != null){
+                            if (tutorial.stage == Tutorial.TutorialStage.pickupCasing){
+                                tutorial.stage = Tutorial.TutorialStage.fillNicotine;
+                            }
+                        }
+                    }
                     if (item.itemType == ItemScript.ItemType.Order){
                         PlaySound(pickupSound);
                     }
