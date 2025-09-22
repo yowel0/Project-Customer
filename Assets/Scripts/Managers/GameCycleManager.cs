@@ -96,6 +96,7 @@ public class GameCycleManager : MonoBehaviour
                 if (leavingCustomers[i].transform.GetChild(0).GetComponent<Animator>()){
                     Animator animator = leavingCustomers[i].transform.GetChild(0).GetComponent<Animator>();
                     animator.SetBool("Walking",true);
+                    leavingCustomers[i].transform.eulerAngles = new Vector3(0,0,0);
                 }
             }
         }

@@ -26,6 +26,9 @@ MonoBehaviour:
   - 55
   maxFlavourAmount: 2
   flavourTypes: 00000000010000000200000003000000
-  orderSounds: []
-  exitSounds: []
-  randomSounds: []
+  orderSounds:
+  - {fileID: 8300000, guid: 130f4fb972d831b41b1d6489a40ff35d, type: 3}
+  exitSounds:
+  - {fileID: 8300000, guid: 0debb6a885284c3448748754a216f417, type: 3}
+  randomSounds:
+  - {fileID: 8300000, guid: 1b5ed540ee853214e8d0f3143c18db91, type: 3}

@@ -5,9 +5,9 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     Vector3 startpos;
-    Vector4 childStartpos;
+    Vector3 childStartpos;
     float ntimer;
-    void Start(){
+    void Awake(){
         startpos = transform.localPosition;
         if (transform.childCount > 0){
             childStartpos = transform.GetChild(0).position;
@@ -18,6 +18,9 @@ public class Interactable : MonoBehaviour
         if (ntimer < 0){
             transform.localPosition = startpos;
         }
+        else{
+            transform.localPosition = startpos + Vector3.down * .05f;
+        }
         ntimer -= Time.deltaTime;
         if (transform.childCount > 0){
             transform.GetChild(0).position = childStartpos;
@@ -25,7 +28,6 @@ public class Interactable : MonoBehaviour
     }
 
     public virtual void Interact(){
-        transform.localPosition = startpos + Vector3.down * .05f;
-        ntimer = 0;
+        ntimer = 0f;
     }
 }

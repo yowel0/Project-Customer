@@ -7,6 +7,7 @@ public class NicotinizerButtonScript : Interactable
     public Nicotinizer nicotinizer;
     Tutorial tutorial;
 
+
     void Start(){
         if (GameObject.Find("Tutorial") != null)
             tutorial = GameObject.Find("Tutorial").GetComponent<Tutorial>();
@@ -14,12 +15,12 @@ public class NicotinizerButtonScript : Interactable
 
     public override void Interact()
     {
+        base.Interact();
         if (tutorial != null){
             if (tutorial.stage == Tutorial.TutorialStage.fillNicotine){
                 tutorial.stage = Tutorial.TutorialStage.fillFlavours;
             }
         }
-        base.Interact();
         nicotinizer.Fill();
     }
 }

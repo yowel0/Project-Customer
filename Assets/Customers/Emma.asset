@@ -26,6 +26,15 @@ MonoBehaviour:
   - 55
   maxFlavourAmount: 3
   flavourTypes: 000000000100000002000000
-  orderSounds: []
-  exitSounds: []
-  randomSounds: []
+  orderSounds:
+  - {fileID: 8300000, guid: bd1f82ed2f2dc1e42ad1f1c2e49b0ecd, type: 3}
+  - {fileID: 8300000, guid: 4e93d3a55fa703e4d852b4b94c4f19be, type: 3}
+  exitSounds:
+  - {fileID: 8300000, guid: d5c613aaf325226448813a4401bb55d1, type: 3}
+  - {fileID: 8300000, guid: fea1a429c5756f04991dd0eb20e38b20, type: 3}
+  - {fileID: 8300000, guid: 09a08ae46b4edde41a7e9b6c389c49b4, type: 3}
+  - {fileID: 8300000, guid: 5d369869cc4ad1f4982f9445ab89c6dd, type: 3}
+  randomSounds:
+  - {fileID: 8300000, guid: 0584c2dd7cdefb543a23fa1c331529c2, type: 3}
+  - {fileID: 8300000, guid: 3f755482dee81724397aee31d5e883d4, type: 3}
+  - {fileID: 8300000, guid: 3bca83c6b6ff5234684288d5876f883e, type: 3}
